@@ -15,15 +15,6 @@ a {
     color: inherit;
 }
 
-img {
-    max-width: 100%;
-}
-
-button {
-    cursor: pointer;
-    font-family: 'Kanit', sans-serif;
-}
-
 .navbar {
     position: sticky;
     top: 0;
@@ -42,21 +33,21 @@ button {
     color: #333;
 }
 
-.navbar_logo span {
-    margin-left: 4px;
-}
-
 .botton_outline {
     display: flex;
     align-items: center;
     gap: 6px;
     padding: 7px 14px;
     font-size: 0.82rem;
-    font-family: 'Kanit', sans-serif;
     color: #555;
     background: none;
     border: 1px solid #ccc;
     border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.botton_outline:hover {
+    background-color: #f0f0ee;
 }
 
 .main_container {
@@ -68,43 +59,136 @@ button {
     padding: 24px 20px 30px;
 }
 
-.image_grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 8px;
+/*เอา image grid ออก*/
+.carousel_wrapper {
+    position: relative;
+    width: 100%;
+    /* กำหนดสัดส่วนภาพให้เหมือนเดิม (4:3) หรือปรับตามใจชอบ */
+    aspect-ratio: 4 / 3;
     border-radius: 12px;
     overflow: hidden;
-    aspect-ratio: 4 / 3;
+    background-color: #f9f9f9;
 }
 
-.image_box {
-    position: relative;
-    overflow: hidden;
+/* แถวที่เก็บ Card ภาพ */
+.carousel_track {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.image_box:first-child {
-    grid-row: span 2;
+/* แต่ละหน้าของสไลด์ */
+.carousel_card {
+    min-width: 100%;
+    /* บังคับให้ 1 card เต็มพื้นที่ wrapper */
+    height: 100%;
 }
 
+.carousel_card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* สำคัญ: ทำให้ภาพขยายเต็มโดยไม่แตกหรือบิดเบี้ยว */
+    display: block;
+}
+
+/* ปุ่มกดควบคุม (Nav Buttons) */
+.nav_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    /* สไตล์กระจกฝ้ามินิมอล */
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    color: #333;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav_btn:hover {
+    background: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev_btn {
+    left: 15px;
+}
+
+.next_btn {
+    right: 15px;
+}
+
+.carousel_dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #fff;
+    width: 20px;
+    /* ยืดออกให้ดู Modern */
+    border-radius: 10px;
+}
+
+/* ปรับปรุง Responsive สำหรับมือถือ */
+@media (max-width: 600px) {
+    .carousel_wrapper {
+        aspect-ratio: 1 / 1;
+        /* มือถือใช้ภาพสี่เหลี่ยมจตุรัสจะดูเต็มตากว่า */
+    }
+
+    .nav_btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+}
+
+/*จบตรงนี้*/
 .image_box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+.image_box:first-child {
+    grid-row: span 2;
+}
+
 .shop_info {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-top: 4px;
 }
 
 .shop_name {
     font-size: 1.6rem;
     font-weight: 700;
-    color: #333;
-    line-height: 1.3;
 }
 
 .rating_box {
@@ -114,22 +198,17 @@ button {
 }
 
 .rating_score {
-    font-size: 1rem;
     font-weight: 700;
     color: #d4a24e;
 }
 
 .rating_star {
-    display: flex;
-    gap: 2px;
     color: #d4a24e;
-    font-size: 0.95rem;
 }
 
 .review_count {
     font-size: 0.78rem;
     color: #999;
-    margin-left: 2px;
 }
 
 .action_buttons {
@@ -147,41 +226,55 @@ button {
     font-size: 0.65rem;
     color: #999;
     cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
 }
 
-.action_btn i { font-size: 1.15rem; }
+.action_btn i {
+    font-size: 1.15rem;
+}
+
+.action_btn.active {
+    color: #e74c3c;
+    transform: scale(1.1);
+}
+
+.action_btn.active i {
+    color: #e74c3c;
+}
+
+.action_btn.active,
+.action_btn.active i,
+.action_btn.active span {
+    color: #ff4757 !important;
+}
+
+.action_btn i {
+    transition: transform 0.2s ease;
+}
+
+.action_btn.active i {
+    transform: scale(1.2);
+}
 
 .infor_list {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding-top: 4px;
+    margin-top: 10px;
 }
 
 .info_row {
     display: flex;
-    align-items: flex-start;
     gap: 8px;
     font-size: 0.82rem;
     color: #555;
 }
 
-.info_row i {
-    font-size: 1.1rem;
-    color: #aaa;
-    margin-top: 2px;
-    flex-shrink: 0;
+.status_open {
+    color: #27ae60;
+    font-weight: 500;
 }
-
-.info_row a {
-    color: #555;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-}
-
-.status_text { font-weight: 500; }
-.status_open { color: #27ae60; }
-.status_closed { color: #c0392b; }
 
 .shop_desc {
     font-size: 0.85rem;
@@ -189,7 +282,7 @@ button {
     line-height: 1.7;
     border-top: 1px solid #ddd;
     padding-top: 14px;
-    margin-top: auto;
+    margin-top: 10px;
 }
 
 .content_section {
@@ -202,28 +295,75 @@ button {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 22px;
-    margin-bottom: 30px;
 }
 
 .info_card {
-    background: #fff;
     border: 1px solid #e5e5e3;
     border-radius: 12px;
     padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .card_title {
     font-size: 1rem;
-    font-weight: 600;
-    color: #333;
     margin-bottom: 14px;
 }
 
-.hours_list {
+/* Map Card Styles */
+.map_card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); /* ทำให้ตัว Card ลอยเด่นขึ้นมานิดนึง */
+}
+
+.map_card_header {
+    padding: 20px 24px;
+    background-color: #fcfcfb;
+    border-bottom: 1px solid #f0f0ee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.map_card_title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #222;
+}
+
+.map_card_title i {
+    color: #e74c3c;
+    font-size: 1.3rem;
+}
+
+.map_card_body {
+    flex: 1;
+    position: relative;
+    min-height: 280px; /* ให้แผนที่ใหญ่ขึ้นนิดหน่อย */
+}
+
+.map_card_body iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.hours-list {
     list-style: none;
 }
 
-.hours_list li {
+.hours-list li {
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
@@ -231,64 +371,32 @@ button {
     border-bottom: 1px solid #f0f0ee;
 }
 
-.hours_list li:last-child { border-bottom: none; }
-
-.day_text {
-    font-weight: 500;
-    color: #333;
-}
-
-.time_text { color: #999; }
-.time_closed { color: #c0392b; font-weight: 500; }
-
 .tags_box {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
-.tag_item {
+.tag-item {
     font-size: 0.72rem;
     padding: 4px 12px;
-    background-color: #f3f3f1;
-    color: #666;
+    background: #f3f3f1;
     border-radius: 14px;
 }
 
 .footer {
     text-align: center;
-    padding: 30px 20px;
+    padding: 30px;
     border-top: 1px solid #ddd;
-    background-color: #fff;
-}
-
-.footer-brand {
-    font-weight: 700;
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 6px;
-}
-
-.footer-text {
-    font-size: 0.78rem;
-    color: #999;
 }
 
 @media (max-width: 900px) {
     .main_container {
         grid-template-columns: 1fr;
-        gap: 18px;
-        padding: 16px 16px 24px;
     }
 
-    .image_grid { aspect-ratio: 16 / 10; }
-    .shop_name { font-size: 1.35rem; }
-
-    .content_section { padding: 0 16px 30px; }
-    .card_grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 600px) {
-    .action_buttons { gap: 10px; flex-wrap: wrap; }
+    .card_grid {
+        grid-template-columns: 1fr;
+    }
 }
