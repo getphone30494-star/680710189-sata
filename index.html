@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kanit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
     <title>Triple Six cafe</title>
 </head>
+
 <body>
     <header class="navbar">
         <a class="navbar_logo" href="#">TRIPLESIX CAFE<span>☕</span></a>
@@ -22,65 +26,91 @@
 
         <div class="navbar_action">
             <button class="botton_outline">
-                <i class='bx bx-map-alt' ></i>
+                <i class='bx bx-map-alt'></i>
                 เเผนที่
             </button>
             <button class="botton_outline">
-                <i class='bx bx-filter' ></i>
+                <i class='bx bx-filter'></i>
                 กรอง
             </button>
         </div>
     </header>
 
     <section class="page_header">
-        <p class="page_header_eyebrow">
-            นครปฐม · สนามจันทร์
-        </p>
-        <h1 class="page_header_title">
-            คาเฟ่ใกล้ ม.ศิลปากร
-        </h1>
-        <p class="page_header_sub">
-            รวม 6 คาเฟ่บรรยากาศสบาย ใกล้มหาวิทยาลัยศิลปากร วิทยาเขตพระราชวังสนามจันทร์<br>
-            เหมาะสำหรับนั่งทำงาน อ่านหนังสือ และพักผ่อนหย่อนใจ
-        </p>
-        <span class="page_header_meta">
-            <i class='bx bxs-map' ></i>
-            6 ร้าน · อ.เมือง จ.นครปฐม
-        </span>
-        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+        <div class="header_slideshow">
+            <div class="slide active"
+                style="background-image: url('https://cms.dmpcdn.com/food/2021/02/17/df872bf0-718c-11eb-85b4-d74ed7823c07_original.jpg');">
+            </div>
+            <div class="slide"
+                style="background-image: url('https://cms.dmpcdn.com/ugcarticle/2020/06/15/211d8240-370c-11ec-ad02-b55ebad82db1_original.jpeg');">
+            </div>
+            <div class="slide"
+                style="background-image: url('https://img.wongnai.com/p/1920x0/2017/08/02/bef6a3a764784b7f94c04570f521c3ca.jpg');">
+            </div>
+            <div class="slide"
+                style="background-image: url('https://img.wongnai.com/p/1920x0/2021/03/04/fd620c807dcf4549821f5a321be902ec.jpg');">
+            </div>
+            <div class="slide"
+                style="background-image: url('https://www.tripgether.com/wp-content/uploads/2022/02/Tosoto2.jpg');">
+            </div>
+            <div class="slide"
+                style="background-image: url('https://www.tripgether.com/wp-content/uploads/2022/02/Baketillwedie1.jpg');">
             </div>
 
-             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://picsum.photos/800/400?random=1" class="d-block w-100" alt="Slide 1">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>สไลด์ที่ 1</h5>
-                        <p>คำอธิบายสไลด์แรก</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/800/400?random=2" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/800/400?random=3" class="d-block w-100" alt="Slide 3">
-                </div>
+            <!-- Carousel Controls -->
+            <button class="carousel_btn prev_btn" aria-label="Previous slide">
+                <i class='bx bx-chevron-left'></i>
+            </button>
+            <button class="carousel_btn next_btn" aria-label="Next slide">
+                <i class='bx bx-chevron-right'></i>
+            </button>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel_indicators">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+                <span class="dot" data-index="5"></span>
             </div>
+        </div>
+
+        <div class="header_content">
+            <p class="page_header_eyebrow">นครปฐม · สนามจันทร์</p>
+            <h1 class="page_header_title">คาเฟ่ใกล้ ม.ศิลปากร</h1>
+            <p class="page_header_sub">
+                รวม 6 คาเฟ่บรรยากาศสบาย ใกล้มหาวิทยาลัยศิลปากร วิทยาเขตพระราชวังสนามจันทร์<br>
+                เหมาะสำหรับนั่งทำงาน อ่านหนังสือ และพักผ่อนหย่อนใจ
+            </p>
+            <span class="page_header_meta">
+                <i class='bx bxs-map'></i>
+                6 ร้าน · อ.เมือง จ.นครปฐม
+            </span>
         </div>
     </section>
 
     <div class="filter_bar">
         <span class="filter_bar_label">หมวดหมู่:</span>
         <button class="filter_chip_active">ทั้งหมด</button>
-        <button class="filter_chip">☕ Coffee</button>
-        <button class="filter_chip">🍰 Bakery</button>
-        <button class="filter_chip">🍽️ Food</button>
-        <button class="filter_chip">🌿 Pet-friendly</button>
-        <button class="filter_chip">📚 Work-friendly</button>
-        <button class="filter_chip">🌳 Outdoor</button>
+        <a href="Carpedium_page.html">
+            <button class="filter_chip">Carpedium</button>
+        </a>
+        <a href="https://ee-ji77.vercel.app/Stay_with_tree_page.html">
+            <button class="filter_chip">Stay with tree</button>
+        </a>
+        <a href="https://680710797-cafe.vercel.app/Way_coffe_page.html">
+            <button class="filter_chip">Way coffee</button>
+        </a>
+        <a href="https://680710189-sata.vercel.app/Bake_house_page.html">
+            <button class="filter_chip">Bake House</button>
+        </a>
+        <a href="https://tosuto.vercel.app/Tosuto_cafe_camp_page.html">
+            <button class="filter_chip">Tosuto cafe camp</button>
+        </a>
+        <a href="https://cafe-website-triplesix.vercel.app/Bake_till_we_die.html">
+            <button class="filter_chip">Bake Till We Die</button>
+        </a>
     </div>
 
     <main class="container">
@@ -90,220 +120,229 @@
         </div>
 
         <div class="cafe_grid">
-        <a href="Carpedium_page.html">
-            <article href="way_home.html" class="cafe_card">
-                <div class="cafe_card_image_warp">
-                    <img src="https://cms.dmpcdn.com/food/2021/02/17/df872bf0-718c-11eb-85b4-d74ed7823c07_original.jpg" alt="คาเปเดี้ยม (Carpediem)" loading="lazy"/>
-                    <span class="cafe_card_badge">หยุดทุกวันพุธ</span>
-                </div>
-                <div class="cafe_card_body">
-                    <div class="cafe_card_top">
-                        <div>
-                            <p class="cafe_card_name">Carpedium</p>
-                            <p class="cafe_card_name">คาเปเดี้ยม</p>
+            <a href="Carpedium_page.html">
+                <article href="way_home.html" class="cafe_card">
+                    <div class="cafe_card_image_warp">
+                        <img src="https://cms.dmpcdn.com/food/2021/02/17/df872bf0-718c-11eb-85b4-d74ed7823c07_original.jpg"
+                            alt="คาเปเดี้ยม (Carpediem)" loading="lazy" />
+                        <span class="cafe_card_badge">หยุดทุกวันพุธ</span>
+                    </div>
+                    <div class="cafe_card_body">
+                        <div class="cafe_card_top">
+                            <div>
+                                <p class="cafe_card_name">Carpedium</p>
+                                <p class="cafe_card_name">คาเปเดี้ยม</p>
+                            </div>
+                            <span class="cafe_card_rating">
+                                <i class='bx bxs-star'></i>
+                                4.7
+                            </span>
                         </div>
-                        <span class="cafe_card_rating">
-                            <i class='bx bxs-star' ></i>
-                            4.7
-                        </span>
+                        <div class="cafe_card_location">
+                            <i class='bx bx-map'></i>
+                            นครปฐม · สนามจันทร์
+                        </div>
+                        <div class="cafe_card_hour">
+                            <i class='bx bx-time-five'></i>
+                            เปิด จ. อ. พฤ. ศ. ส. อา. 09:00 – 19:00 น.
+                        </div>
+                        <div class="cafe_card_tags">
+                            <span class="tag">☕ Coffee</span>
+                            <span class="tag">🍰 Bakery</span>
+                            <span class="tag">🌿 Garden</span>
+                        </div>
                     </div>
-                    <div class="cafe_card_location">
-                        <i class='bx bx-map' ></i>
-                        นครปฐม · สนามจันทร์
-                    </div>
-                    <div class="cafe_card_hour">
-                        <i class='bx bx-time-five' ></i>
-                        เปิด จ. อ. พฤ. ศ. ส. อา.  09:00 – 19:00 น.
-                    </div>
-                    <div class="cafe_card_tags">
-                        <span class="tag">☕ Coffee</span>
-                        <span class="tag">🍰 Bakery</span>
-                        <span class="tag">🌿 Garden</span>
-                    </div>
-                </div>
-            </article>
-        </a>
+                </article>
+            </a>
 
-        <a href="Stay_with_tree_page.html">
-            <article class="cafe_card">
-                <div class="cafe_card_image_warp">
-                    <img src="https://cms.dmpcdn.com/ugcarticle/2020/06/15/211d8240-370c-11ec-ad02-b55ebad82db1_original.jpeg" alt="STAY WITH TREE CAFE" loading="lazy"/>
-                    <span class="cafe_card_badge">หยุดทุกวันพฤหัส</span>
-                </div>
-                <div class="cafe_card_body">
-                    <div class="cafe_card_top">
-                        <div>
-                            <p class="cafe_card_name">STAY WITH TREE</p>
-                            <p class="cafe_card_name">สเตย์ วิท ทรี</p>
+            <a href="https://ee-ji77.vercel.app/Stay_with_tree_page.html">
+                <article class="cafe_card">
+                    <div class="cafe_card_image_warp">
+                        <img src="https://cms.dmpcdn.com/ugcarticle/2020/06/15/211d8240-370c-11ec-ad02-b55ebad82db1_original.jpeg"
+                            alt="STAY WITH TREE CAFE" loading="lazy" />
+                        <span class="cafe_card_badge">หยุดทุกวันพฤหัส</span>
+                    </div>
+                    <div class="cafe_card_body">
+                        <div class="cafe_card_top">
+                            <div>
+                                <p class="cafe_card_name">STAY WITH TREE</p>
+                                <p class="cafe_card_name">สเตย์ วิท ทรี</p>
+                            </div>
+                            <span class="cafe_card_rating">
+                                <i class='bx bxs-star'></i>
+                                4.8
+                            </span>
                         </div>
-                        <span class="cafe_card_rating">
-                            <i class='bx bxs-star' ></i>
-                            4.8
-                        </span>
+                        <div class="cafe_card_location">
+                            <i class='bx bx-map'></i>
+                            นครปฐม · สนามจันทร์
+                        </div>
+                        <div class="cafe_card_hour">
+                            <i class='bx bx-time-five'></i>
+                            เปิด จ. อ. พ. ศ. ส. อา. 09:00 – 17:00 น.
+                        </div>
+                        <div class="cafe_card_tags">
+                            <span class="tag">☕ Coffee</span>
+                            <span class="tag">🌳 Outdoor</span>
+                            <span class="tag">🌿 Pet-friendly</span>
+                        </div>
                     </div>
-                    <div class="cafe_card_location">
-                        <i class='bx bx-map' ></i>
-                        นครปฐม · สนามจันทร์
-                    </div>
-                    <div class="cafe_card_hour">
-                        <i class='bx bx-time-five' ></i>
-                        เปิด จ. อ. พ. ศ. ส. อา. 09:00 – 17:00 น. 
-                    </div>
-                    <div class="cafe_card_tags">
-                        <span class="tag">☕ Coffee</span>
-                        <span class="tag">🌳 Outdoor</span>
-                        <span class="tag">🌿 Pet-friendly</span>
-                    </div>
-                </div>
-            </article>
-        </a>
+                </article>
+            </a>
 
-        <a href="Way_coffee_page.html">
-            <article class="cafe_card">
-                <div class="cafe_card_image_warp">
-                    <img src="https://img.wongnai.com/p/1920x0/2017/08/02/bef6a3a764784b7f94c04570f521c3ca.jpg" alt="Way Coffee" loading="lazy"/>
-                    <span class="cafe-card_badge">เปิดทุกวัน</span>
-                </div>
-                <div class="cafe_card_body">
-                    <div class="cafe_card_top">
-                        <div>
-                            <p class="cafe_card_name">Way Coffee</p>
-                            <p class="cafe_card_name">เวย์ คอฟฟี่</p>
+            <a href="https://680710797-cafe.vercel.app/Way_coffe_page.html">
+                <article class="cafe_card">
+                    <div class="cafe_card_image_warp">
+                        <img src="https://img.wongnai.com/p/1920x0/2017/08/02/bef6a3a764784b7f94c04570f521c3ca.jpg"
+                            alt="Way Coffee" loading="lazy" />
+                        <span class="cafe-card_badge">เปิดทุกวัน</span>
+                    </div>
+                    <div class="cafe_card_body">
+                        <div class="cafe_card_top">
+                            <div>
+                                <p class="cafe_card_name">Way Coffee</p>
+                                <p class="cafe_card_name">เวย์ คอฟฟี่</p>
+                            </div>
+                            <span class="cafe_card_rating">
+                                <i class='bx bxs-star'></i>
+                                4.6
+                            </span>
                         </div>
-                        <span class="cafe_card_rating">
-                            <i class='bx bxs-star' ></i>
-                            4.6
-                        </span>
+                        <div class="cafe_card_location">
+                            <i class='bx bx-map'></i>
+                            นครปฐม · สนามจันทร์
+                        </div>
+                        <div class="cafe_card_hour">
+                            <i class='bx bx-time-five'></i>
+                            10:30 – 21:00 น.
+                        </div>
+                        <div class="cafe_card_tags">
+                            <span class="tag">☕ Coffee</span>
+                            <span class="tag">🍽️ Food</span>
+                            <span class="tag">📚 Work-friendly</span>
+                        </div>
                     </div>
-                    <div class="cafe_card_location">
-                        <i class='bx bx-map' ></i>
-                        นครปฐม · สนามจันทร์
-                    </div>
-                    <div class="cafe_card_hour">
-                        <i class='bx bx-time-five' ></i>
-                        10:30 – 21:00 น.
-                    </div>
-                    <div class="cafe_card_tags">
-                        <span class="tag">☕ Coffee</span>
-                        <span class="tag">🍽️ Food</span>
-                        <span class="tag">📚 Work-friendly</span>
-                    </div>
-                </div>
-            </article>
-        </a>
+                </article>
+            </a>
 
-        <a href="Bake_house_page.html">
-            <article class="cafe_card">
-                <div class="cafe_card_image_warp">
-                    <img src="https://img.wongnai.com/p/400x0/2021/03/04/fd620c807dcf4549821f5a321be902ec.jpg" alt="Bake House" loading="lazy"/>
-                    <span class="cafe_card_badge">หยุดทุกวันอังคาร</span>
-                </div>
-                <div class="cafe_card_body">
-                    <div class="cafe_card_top">
-                        <div>
-                            <p class="cafe_card_name">Bake House</p>
-                            <p class="cafe_card_name">เบคเฮ้าส์ บ้านทำขนม</p>
+            <a href="https://680710189-sata.vercel.app/Bake_house_page.html">
+                <article class="cafe_card">
+                    <div class="cafe_card_image_warp">
+                        <img src="https://img.wongnai.com/p/1920x0/2021/03/04/fd620c807dcf4549821f5a321be902ec.jpg"
+                            alt="Bake House" loading="lazy" />
+                        <span class="cafe_card_badge">หยุดทุกวันอังคาร</span>
+                    </div>
+                    <div class="cafe_card_body">
+                        <div class="cafe_card_top">
+                            <div>
+                                <p class="cafe_card_name">Bake House</p>
+                                <p class="cafe_card_name">เบคเฮ้าส์ บ้านทำขนม</p>
+                            </div>
+                            <span class="cafe_card_rating">
+                                <i class='bx bxs-star'></i>
+                                4.5
+                            </span>
                         </div>
-                        <span class="cafe_card_rating">
-                            <i class='bx bxs-star' ></i>
-                            4.5
-                        </span>
+                        <div class="cafe_card_location">
+                            <i class='bx bx-map'></i>
+                            นครปฐม · สนามจันทร์
+                        </div>
+                        <div class="cafe_card_hour">
+                            <i class='bx bx-time-five'></i>
+                            เปิด จ. พ. พฤ. ศ. ส. อา. 10:00 – 19:00 น.
+                        </div>
+                        <div class="cafe_card_tags">
+                            <span class="tag">🍰 Bakery</span>
+                            <span class="tag">☕ Coffee</span>
+                            <span class="tag">🍽️ Food</span>
+                        </div>
                     </div>
-                    <div class="cafe_card_location">
-                        <i class='bx bx-map' ></i>
-                        นครปฐม · สนามจันทร์
-                    </div>
-                    <div class="cafe_card_hour">
-                        <i class='bx bx-time-five' ></i>
-                        เปิด จ. พ. พฤ. ศ. ส. อา. 10:00 – 19:00 น.
-                    </div>
-                    <div class="cafe_card_tags">
-                        <span class="tag">🍰 Bakery</span>
-                        <span class="tag">☕ Coffee</span>
-                        <span class="tag">🍽️ Food</span>
-                    </div>
-                </div>
-            </article>
-        </a>
+                </article>
+            </a>
 
-        <a href="Tosuto_cafe_camp_page.html">
-            <article class="cafe_card">
-                <div class="cafe_card_image_warp">
-                    <img src="https://www.tripgether.com/wp-content/uploads/2022/02/Tosoto2.jpg" alt="Tosuto Cafe Camp" loading="lazy"/>
-                    <span class="cafe_card_badge">หยุดทุกวันจันทร์</span>
-                </div>
-                <div class="cafe_card_body">
-                    <div class="cafe_card_top">
-                        <div>
-                            <p class="cafe_card_name">Tosuto Cafe Camp</p>
-                            <p class="cafe_card_name">โทสโตะ คาเฟ่ แคมป์</p>
+            <a href="https://tosuto.vercel.app/Tosuto_cafe_camp_page.html">
+                <article class="cafe_card">
+                    <div class="cafe_card_image_warp">
+                        <img src="https://www.tripgether.com/wp-content/uploads/2022/02/Tosoto2.jpg"
+                            alt="Tosuto Cafe Camp" loading="lazy" />
+                        <span class="cafe_card_badge">หยุดทุกวันจันทร์</span>
+                    </div>
+                    <div class="cafe_card_body">
+                        <div class="cafe_card_top">
+                            <div>
+                                <p class="cafe_card_name">Tosuto Cafe Camp</p>
+                                <p class="cafe_card_name">โทสโตะ คาเฟ่ แคมป์</p>
+                            </div>
+                            <span class="cafe_card_rating">
+                                <i class='bx bxs-star'></i>
+                                4.6
+                            </span>
                         </div>
-                        <span class="cafe_card_rating">
-                            <i class='bx bxs-star' ></i>
-                            4.6
-                        </span>
+                        <div class="cafe_card_location">
+                            <i class='bx bx-map'></i>
+                            นครปฐม · สนามจันทร์
+                        </div>
+                        <div class="cafe_card_hour">
+                            <i class='bx bx-time-five'></i>
+                            เปิด อ. พ. พฤ. ศ. ส. อา. 14:00 – 22:00 น.
+                        </div>
+                        <div class="cafe_card_tags">
+                            <span class="tag">☕ Coffee</span>
+                            <span class="tag">🏕️ Camping-style</span>
+                            <span class="tag">🌳 Outdoor</span>
+                        </div>
                     </div>
-                    <div class="cafe_card_location">
-                        <i class='bx bx-map' ></i>
-                        นครปฐม · สนามจันทร์
-                    </div>
-                    <div class="cafe_card_hour">
-                        <i class='bx bx-time-five' ></i>
-                        เปิด อ. พ. พฤ. ศ. ส. อา.  14:00 – 22:00 น. 
-                    </div>
-                    <div class="cafe_card_tags">
-                        <span class="tag">☕ Coffee</span>
-                        <span class="tag">🏕️ Camping-style</span>
-                        <span class="tag">🌳 Outdoor</span>
-                    </div>
-                </div>
-            </article>
-        </a>
+                </article>
+            </a>
 
-        <a href="Bake_till_we_die.html">
-            <article class="cafe_card">
-                <div class="cafe_card_image-warp">
-                    <img src="https://www.tripgether.com/wp-content/uploads/2022/02/Baketillwedie1.jpg" alt="BAKE TILL WE DIE" loading="lazy"/>
-                    <span class="cafe_card_badge">เปิดทุกวัน</span>
-                </div>
-                <div class="cafe_card_body">
-                    <div class="cafe_card_top">
-                        <div>
-                            <p class="cafe_card_name">BAKE TILL WE DIE</p>
-                            <p class="cafe_card_name">เบค ทิล วี ดาย</p>
+            <a href="https://cafe-website-triplesix.vercel.app/Bake_till_we_die.html">
+                <article class="cafe_card">
+                    <div class="cafe_card_image-warp">
+                        <img src="https://www.tripgether.com/wp-content/uploads/2022/02/Baketillwedie1.jpg"
+                            alt="BAKE TILL WE DIE" loading="lazy" />
+                        <span class="cafe_card_badge">เปิดทุกวัน</span>
+                    </div>
+                    <div class="cafe_card_body">
+                        <div class="cafe_card_top">
+                            <div>
+                                <p class="cafe_card_name">BAKE TILL WE DIE</p>
+                                <p class="cafe_card_name">เบค ทิล วี ดาย</p>
+                            </div>
+                            <span class="cafe_card_rating">
+                                <i class='bx bxs-star'></i>
+                                4.8
+                            </span>
                         </div>
-                        <span class="cafe_card_rating">
-                            <i class='bx bxs-star' ></i>
-                            4.8
-                        </span>
+                        <div class="cafe_card_loaction">
+                            <i class='bx bx-map'></i>
+                            นครปฐม · สนามจันทร์
+                        </div>
+                        <div class="cafe_card_hour">
+                            <i class='bx bx-time-five'></i>
+                            10:00 – 19:00 น.
+                        </div>
+                        <div class="cafe_card_tags">
+                            <span class="tag">🍰 Bakery</span>
+                            <span class="tag">☕ Coffee</span>
+                            <span class="tag">✨ Minimal</span>
+                        </div>
                     </div>
-                    <div class="cafe_card_loaction">
-                        <i class='bx bx-map' ></i>
-                        นครปฐม · สนามจันทร์
-                    </div>
-                    <div class="cafe_card_hour">
-                        <i class='bx bx-time-five' ></i>
-                        10:00 – 19:00 น.
-                    </div>
-                    <div class="cafe_card_tags">
-                        <span class="tag">🍰 Bakery</span>
-                        <span class="tag">☕ Coffee</span>
-                        <span class="tag">✨ Minimal</span>
-                    </div>
-                </div>
-            </article>
-        </a>
+                </article>
+            </a>
         </div>
     </main>
 
     <footer class="footer">
         <p class="footer_brand">Triple Six ☕</p>
         <p class="footer_text">
-            ข้อมูลอ้างอิงจาก <a href="https://www.tripgether.com" target="_blank" style="color:inherit; text-decoration:underline; text-underline-offset:2px;">tripgether.com</a>
+            ข้อมูลอ้างอิงจาก <a href="https://www.tripgether.com" target="_blank"
+                style="color:inherit; text-decoration:underline; text-underline-offset:2px;">tripgether.com</a>
             <span class="footer__divider">·</span>
             รูปภาพ placeholder จาก picsum.photos
         </p>
     </footer>
-
+    <!--ตรงนี้ด้วยจ้าาาา-->
+    <script src="/Js/home.js"></script>
 </body>
+
 </html>
